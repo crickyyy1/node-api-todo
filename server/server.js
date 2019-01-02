@@ -30,7 +30,6 @@ app.get('/todos', (req, res) => {
   });
 });
 
-//GET /todos/12345
 app.get('/todos/:id', (req, res) => {
   const id = req.params.id;
   
