@@ -13,6 +13,10 @@ const todos = [{
   text: 'Second Test Todo',
   completed: true,
   completedAt: 333
+<<<<<<< HEAD
+=======
+
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
 }];
 
 beforeEach((done) => {
@@ -145,15 +149,27 @@ describe('DELETE /todos/:id', () => {
 
 describe('PATCH /todos/:id', () => {
   it('should update the todo', (done) => {
+<<<<<<< HEAD
     const hexId = todos[0]._id.toHexString();
     const text = 'This should be the new text';
 
+=======
+    // grab ID of first item 
+    const hexId = todos[0]._id.toHexString();
+    //update text, set completed equal to true
+    const text = 'This is the new text';
+    //assert 200 back
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
     request(app)
       .patch(`/todos/${hexId}`)
       .send({
         completed: true,
         text
       })
+<<<<<<< HEAD
+=======
+       // text is changed, complted is true, and completed at is a num
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
       .expect(200)
       .expect((res) => {
         expect(res.body.todo.text).toBe(text);
@@ -161,18 +177,33 @@ describe('PATCH /todos/:id', () => {
         expect(res.body.todo.completedAt).toBeA('number');
       })
       .end(done)
+<<<<<<< HEAD
   })
 
   it('should clear completedAt when todo is not completed', (done) => {
     const hexId = todos[1]._id.toHexString();
     const text = 'This should be text';
 
+=======
+   
+  });
+
+  it('should clear completedAt when todo is not completed', (done) => {
+    const hexId = todos[1]._id.toHexString();
+    //update text, set completed equal to true
+    const text = 'This is the text for second case';
+    //assert 200 back
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
     request(app)
       .patch(`/todos/${hexId}`)
       .send({
         completed: false,
         text
       })
+<<<<<<< HEAD
+=======
+       // text is changed, complted is true, and completed at is a num
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
       .expect(200)
       .expect((res) => {
         expect(res.body.todo.text).toBe(text);
@@ -180,5 +211,10 @@ describe('PATCH /todos/:id', () => {
         expect(res.body.todo.completedAt).toNotExist();
       })
       .end(done)
+<<<<<<< HEAD
   })
 })
+=======
+  });
+});
+>>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
