@@ -13,10 +13,6 @@ const todos = [{
   text: 'Second Test Todo',
   completed: true,
   completedAt: 333
-<<<<<<< HEAD
-=======
-
->>>>>>> 95fcacabce91be46fec983a7edb5104650e1f97e
 }];
 
 beforeEach((done) => {
